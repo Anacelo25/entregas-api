@@ -18,7 +18,7 @@ public class Cozinha {
     private Long id;
 
     @JsonProperty("titulo")
-    @Column(name = "NOME" /*length = 200*/)
+    @Column(name = "nome" /*length = 200*/)
     private String nome;
 
     public Long getId() {
