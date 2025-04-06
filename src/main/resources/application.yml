@@ -1,0 +1,17 @@
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEPDB1)))
+
+    username: TESTE
+    password: TESTE
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.OracleDialect # depende da versão do java
+      hibernate.show_sql: true
+      hibernate.format_sql: true
+      # Além de verificar as permissão necessárias de usuário no banco no caso Oracle XE...
