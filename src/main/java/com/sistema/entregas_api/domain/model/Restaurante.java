@@ -4,14 +4,13 @@ package com.sistema.entregas_api.domain.model;
 
 
 
-import com.sistema.entregas_api.domain.model.Cozinha;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tab_restaurantes")
+@Table(name = "restaurantes")
 public class Restaurante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +19,10 @@ public class Restaurante {
     private String nome;
     @Column(name = "taxa_frete")
     private BigDecimal taxaFrete;
+
     @ManyToOne
-    @JoinColumn(name = "cozinha_id", nullable = false)
+//    @JoinColumn(name = "cozinha_codigo_id", nullable = false) , imaginemos o caso de uma db legado em que o id identificado tem nome diferente e precisamos relaciona-los, passamos o valor atráves do @JoinColumn
+    @JoinColumn(name = "cozinha_id_cod", nullable = false)
     private Cozinha cozinha;
 
     public Long getId() {
